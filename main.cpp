@@ -1,30 +1,5 @@
 #include "Demineur.h"
 
-void easterEggCat()
-{
-	const string cat[3] = {
-		R"(    |\__/,|   (`\)",
-		R"(  _.|o o  |_   ) ))",
-		R"(-(((---(((--------)",
-	};
-
-	for (int i = 0; i < 3; ++i) {
-		cout << cat[i] << endl;
-	}
-}
-
-void	print_bonus(grille demineur)
-{
-	for (int i = 0; i < demineur.row; i++)
-	{
-		for (int j = 0; j < demineur.column; j++)
-		{
-			cout << "[" << demineur.tab[i][j] << "]";
-		}
-		cout << endl;
-	}
-}
-
 int main()
 {
 	grille demineur;
@@ -80,8 +55,8 @@ int main()
 			bonus_activate(1, &demineur);
 		if (win_game(demineur))
 			break;
+		system("cls");
 		print_tab(demineur);
 		questions(&i, &j, &type, demineur);
-		system("cls");
 	}
 }

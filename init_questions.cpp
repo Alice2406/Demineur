@@ -58,11 +58,6 @@ void	questions(int* i, int* j, int* type, grille demineur)
 			cout << CYAN << "Quelle case veut tu reveler ?" << RESET;
 		else if (*type == 1)
 			cout << MAGENTA << "Sur quelle case veux tu mettre un drapeau ?" << RESET;
-		else if (*type == 24)
-		{
-			cout << MAGENTA << "Tu as debloque l'easter egg du jeu" << RESET << endl;
-			return;
-		}
 		else
 			return;
 		cin >> *i;

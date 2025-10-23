@@ -26,16 +26,34 @@ struct grille {
 	int cat = 0;
 };
 
-void	print_finish_tab(grille demineur);
+//-------------PRINT--------------//
+
+void	print_numbers(int nb);
 void	print_tab(grille demineur);
-void	mine_random(grille* demineur, int x, int y);
-void	count_mine(grille* demineur);
-void	choose_level(int* row, int* column);
-void	questions(int* i, int* j, int* type, grille demineur);
+void	print_finish_tab(grille demineur);
 void	flood_fill(int i, int j, grille* demineur);
 int		win_game(grille demineur);
+
+//--------------INIT--------------//
+
+void	choose_level(int* row, int* column);
+void	questions(int* i, int* j, int* type, grille demineur);
+
+//--------------MINE--------------//
+
+void	mine_random(grille* demineur, int x, int y);
+void	count_mine(grille* demineur);
+
+//--------------BONUS-------------//
+
 void	bonus_item_random(grille* demineur, int x, int y);
 void	bonus_mine_random(grille* demineur, int x, int y);
-int		item_bonus_present(grille demineur);
+void    reset_bonus(grille* demineur, int nb);
+void    bonus_case_activate(grille* demineur);
+void    bonus_mine_activate(grille* demineur);
 void    bonus_activate(int nb, grille* demineur);
+int		item_bonus_present(grille demineur);
+
+//------------SURPRISE------------//
+
 void	easterEggCat();

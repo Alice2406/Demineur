@@ -66,9 +66,20 @@ void	print_tab(grille demineur)
 
 void	print_finish_tab(grille demineur)
 {
-	cout << RED << "LOOOOOOOOSER" << RESET << endl;
+	system("cls");
+	cout << "  ";
+	for (int k = 0; k < demineur.column; k++)
+	{
+		cout << " " << k;
+		if (k < 10)
+			cout << " ";
+	}
+	cout << endl;
 	for (int i = 0; i < demineur.row; i++)
 	{
+		cout << i;
+		if (i < 10)
+			cout << " ";
 		for (int j = 0; j < demineur.column; j++)
 		{
 			if (demineur.tab[i][j] == -1)
@@ -80,6 +91,7 @@ void	print_finish_tab(grille demineur)
 		}
 		cout << endl;
 	}
+	cout << RED << "LOOOOOOOOSER" << RESET << endl;
 }
 
 void	flood_fill(int i, int j, grille* demineur)
@@ -107,6 +119,8 @@ int win_game(grille demineur)
 		for (int j = 0; j < demineur.column; j++)
 			if (demineur.reveal[i][j] == 0 && demineur.tab[i][j] != -1)
 				return (0);
+	system("cls");
+	print_tab(demineur);
 	cout << GREEN << "BRAVOOOOO !" << RESET << endl;
 	return (1);
 }
